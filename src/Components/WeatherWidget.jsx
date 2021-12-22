@@ -18,20 +18,30 @@ export default function WeatherWidget(props) {
     dispatch(getWeatherAction(label));
   };
 
-  console.log(country);
+  console.log(weather);
   return (
-    <div>
+    <div className="widget">
       <Select
         options={options}
         value={{ label: country, value: countryCode }}
         onChange={onCountryChange}
       />
       {loaded ? (
-        <span>
-          Country: {country} Weather: {weather}
-        </span>
+        <>
+          <p className="country">
+            {weather.location.name}, {weather.location.country}
+          </p>
+          <p className="condition">
+            {weather.current.condition.text}{' '}
+            <img src={weather.current.condition.icon}></img>
+          </p>
+          <p className="temp">{weather.current.temp_c}°C</p>
+          <p className="feels-like">
+            Feels Like: {weather.current.feelslike_c}°C
+          </p>
+        </>
       ) : (
-        <span>No country selected</span>
+        <span>No country selected or invalid country</span>
       )}
     </div>
   );

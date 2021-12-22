@@ -5,12 +5,13 @@ export const weatherSlice = createSlice({
   initialState: {
     country: '',
     countryCode: '',
-    weather: 0,
+    weather: {},
     loaded: false,
   },
   reducers: {
     changeCountry: (state, action) => {
       state.country = action.payload.country;
+      state.countryCode = action.payload.countryCode;
       state.loaded = false;
     },
     countryLoaded: (state, action) => {

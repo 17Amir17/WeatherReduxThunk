@@ -18,13 +18,21 @@ async function getWeather(country) {
   }
 }
 
-//thunk action
-export function getWeatherAction(country) {
-  console.log('Hello there!');
-  //thunk function
-  return async function getWeatherThunk(dispatch, _getState) {
-    const weather = await getWeather(country);
-    console.log(weather);
-    if (weather) dispatch(countryLoaded(weather.current.temp_c));
-  };
-}
+// //thunk action
+// export function getWeatherAction(country) {
+//   console.log('Hello there!');
+//   //thunk function
+//   return async function getWeatherThunk(dispatch, _getState) {
+//     const weather = await getWeather(country);
+//     console.log(weather);
+//     if (weather) dispatch(countryLoaded(weather.current.temp_c));
+//   };
+// }
+
+//thunk action arrow
+export const getWeatherAction = (country) => async (dispatch) => {
+  //thunk functio
+  const weather = await getWeather(country);
+  console.log(weather);
+  if (weather) dispatch(countryLoaded(weather));
+};
