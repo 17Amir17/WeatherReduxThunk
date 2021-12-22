@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/WeatherReduxThunk/build/static/css/main.e6d08a0e.css",
+    "main.js": "/WeatherReduxThunk/build/static/js/main.5007f1e6.js",
+    "index.html": "/WeatherReduxThunk/build/index.html",
+    "main.e6d08a0e.css.map": "/WeatherReduxThunk/build/static/css/main.e6d08a0e.css.map",
+    "main.5007f1e6.js.map": "/WeatherReduxThunk/build/static/js/main.5007f1e6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6d08a0e.css",
+    "static/js/main.5007f1e6.js"
+  ]
+}
