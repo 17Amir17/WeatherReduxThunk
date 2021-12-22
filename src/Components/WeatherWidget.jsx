@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Select from 'react-select';
 import countryList from 'react-select-country-list';
 import { changeCountry } from '../Reducers/WeatherReducer';
+import { getWeatherAction } from '../Middleware/getWeather';
 
 export default function WeatherWidget(props) {
   const { weather, country, countryCode, loaded } = useSelector(
@@ -14,6 +15,7 @@ export default function WeatherWidget(props) {
   const onCountryChange = (country) => {
     const { label, value } = country;
     dispatch(changeCountry({ country: label, countryCode: value }));
+    dispatch(getWeatherAction(label));
   };
 
   console.log(country);

@@ -11,12 +11,16 @@ export const weatherSlice = createSlice({
   reducers: {
     changeCountry: (state, action) => {
       state.country = action.payload.country;
+      state.loaded = false;
+    },
+    countryLoaded: (state, action) => {
+      state.weather = action.payload;
       state.loaded = true;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { changeCountry } = weatherSlice.actions;
+export const { changeCountry, countryLoaded } = weatherSlice.actions;
 
 export default weatherSlice.reducer;
